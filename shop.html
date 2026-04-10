@@ -287,6 +287,15 @@
   </footer>
 
   <script>
+    // Make entire card clickable
+    document.querySelectorAll('#shop-grid .card').forEach(card => {
+      const link = card.querySelector('.card-link');
+      if (link) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => { window.location.href = link.href; });
+      }
+    });
+
     const activeFilters = { room: 'all', type: 'all', aesthetic: 'all' };
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
