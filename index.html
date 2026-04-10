@@ -46,41 +46,84 @@
   <section class="section" id="picks">
     <div class="container">
       <h2 class="section-title">Current Favorites</h2>
-      <p class="section-sub">Things we're loving right now</p>
+      <p class="section-sub">Our most-saved finds right now</p>
       <div class="grid-3" id="products-grid">
 
-        <div class="card">
+        <div class="card" onclick="window.location='products/pastel-highlighters.html'">
           <div class="card-img-wrap">
-            <img src="images/placeholder.jpg" alt="Cozy throw blanket" onerror="this.parentElement.classList.add('no-img')" />
+            <img src="images/pastel-highlighters.png" alt="Pastel highlighters on a cozy aesthetic desk" />
           </div>
           <div class="card-body">
-            <span class="card-tag">Bedroom</span>
-            <h3 class="card-title">Bedelite Fuzzy Blanket</h3>
-            <p class="card-desc">The softest throw we've found. Perfect weight for layering on a bed or couch.</p>
-            <a href="#" class="card-link" target="_blank">Shop on Amazon →</a>
+            <div class="card-tags"><span class="card-tag">Desk Accessories</span><span class="card-tag">Study</span></div>
+            <h3 class="card-title">Pastel Highlighters Set</h3>
+            <p class="card-desc">The aesthetic upgrade your desk didn't know it needed. Soft pastel tones that actually look good out on your desk.</p>
+            <a href="products/pastel-highlighters.html" class="card-link">See Details →</a>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-img-wrap no-img"></div>
+        <div class="card" onclick="window.location='products/laptop-stand.html'">
+          <div class="card-img-wrap">
+            <img src="images/laptop-stand.png" alt="Aluminum laptop stand on a minimal desk setup" />
+          </div>
           <div class="card-body">
-            <span class="card-tag">Desk Setup</span>
-            <h3 class="card-title">Minimal Desk Organizer</h3>
-            <p class="card-desc">Clean lines, warm wood tones. Makes any desk feel intentional and put-together.</p>
-            <a href="#" class="card-link" target="_blank">Shop on Amazon →</a>
+            <div class="card-tags"><span class="card-tag">Desk Setup</span><span class="card-tag">Home Office</span></div>
+            <h3 class="card-title">Aluminum Laptop Stand</h3>
+            <p class="card-desc">Raises your screen to eye level and instantly makes any desk feel more intentional. Works with any laptop.</p>
+            <a href="products/laptop-stand.html" class="card-link">See Details →</a>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-img-wrap no-img"></div>
+        <div class="card" onclick="window.location='products/flower-table-lamp.html'">
+          <div class="card-img-wrap">
+            <img src="images/flower-table-lamp.png" alt="Flower table lamp glowing warm on a cozy nightstand" />
+          </div>
           <div class="card-body">
-            <span class="card-tag">Dorm Room</span>
-            <h3 class="card-title">String Lights Set</h3>
-            <p class="card-desc">Warm-toned lights that instantly make a dorm room feel like home.</p>
-            <a href="#" class="card-link" target="_blank">Shop on Amazon →</a>
+            <div class="card-tags"><span class="card-tag">Bedroom</span><span class="card-tag">Lighting</span></div>
+            <h3 class="card-title">Flower Table Lamp</h3>
+            <p class="card-desc">Soft floral silhouette with a warm glow. The kind of lamp that makes your bedroom feel like a boutique hotel.</p>
+            <a href="products/flower-table-lamp.html" class="card-link">See Details →</a>
           </div>
         </div>
 
+        <div class="card" onclick="window.location='products/monitor-lamp.html'">
+          <div class="card-img-wrap">
+            <img src="images/monitor-lamp.png" alt="Monitor light bar on a clean minimal desk" />
+          </div>
+          <div class="card-body">
+            <div class="card-tags"><span class="card-tag">Desk Setup</span><span class="card-tag">Gaming</span></div>
+            <h3 class="card-title">Monitor Light Bar</h3>
+            <p class="card-desc">No glare, no harsh shadows — just clean even lighting across your whole desk. A game changer for late-night work.</p>
+            <a href="products/monitor-lamp.html" class="card-link">See Details →</a>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.location='products/sunset-lamp.html'">
+          <div class="card-img-wrap">
+            <img src="images/sunset-lamp.png" alt="Sunset projection lamp casting warm golden light across a cozy bedroom" />
+          </div>
+          <div class="card-body">
+            <div class="card-tags"><span class="card-tag">Bedroom</span><span class="card-tag">Aesthetic</span></div>
+            <h3 class="card-title">Sunset Projection Lamp</h3>
+            <p class="card-desc">Fills your room with golden hour vibes on demand. No filter needed — just point and glow.</p>
+            <a href="products/sunset-lamp.html" class="card-link">See Details →</a>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.location='products/foot-of-bed-ottoman.html'">
+          <div class="card-img-wrap">
+            <img src="images/foot-of-bed-ottoman.png" alt="Storage ottoman at the foot of a cozy minimal bed" />
+          </div>
+          <div class="card-body">
+            <div class="card-tags"><span class="card-tag">Bedroom</span><span class="card-tag">Storage</span></div>
+            <h3 class="card-title">Foot of Bed Storage Ottoman</h3>
+            <p class="card-desc">Hides clutter and adds a finished, polished look to the end of your bed. Storage that doesn't look like storage.</p>
+            <a href="products/foot-of-bed-ottoman.html" class="card-link">See Details →</a>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a href="shop.html" class="btn">View All Products</a>
       </div>
     </div>
   </section>
@@ -92,31 +135,43 @@
       <p class="section-sub">Find exactly what your space needs</p>
       <div class="grid-2">
 
-        <a href="#" class="room-card">
-          <div class="room-card-inner">
-            <h3>Minimal Bedroom</h3>
-            <p>Calm, clean, cozy</p>
+        <a href="shop.html?room=bedroom" class="room-card room-card-img">
+          <img src="images/flower-table-lamp.png" alt="Cozy minimal bedroom finds" class="room-card-bg" />
+          <div class="room-card-overlay">
+            <div class="room-card-inner">
+              <h3>Minimal Bedroom</h3>
+              <p>Calm, clean, cozy</p>
+            </div>
           </div>
         </a>
 
-        <a href="#" class="room-card">
-          <div class="room-card-inner">
-            <h3>Desk Setup</h3>
-            <p>Functional and aesthetic</p>
+        <a href="shop.html?room=home-office" class="room-card room-card-img">
+          <img src="images/laptop-stand.png" alt="Home office and desk setup finds" class="room-card-bg" />
+          <div class="room-card-overlay">
+            <div class="room-card-inner">
+              <h3>Desk & Home Office</h3>
+              <p>Functional and aesthetic</p>
+            </div>
           </div>
         </a>
 
-        <a href="#" class="room-card">
-          <div class="room-card-inner">
-            <h3>Nursery & Playroom</h3>
-            <p>Safe, sweet, and organized</p>
+        <a href="shop.html?room=kids-room" class="room-card room-card-img">
+          <img src="images/stuffed-animal-hammock.png" alt="Kids room and nursery finds" class="room-card-bg" />
+          <div class="room-card-overlay">
+            <div class="room-card-inner">
+              <h3>Kids & Nursery</h3>
+              <p>Safe, sweet, and organized</p>
+            </div>
           </div>
         </a>
 
-        <a href="#" class="room-card">
-          <div class="room-card-inner">
-            <h3>Dorm Room</h3>
-            <p>Make it feel like home</p>
+        <a href="shop.html?room=gaming-setup" class="room-card room-card-img">
+          <img src="images/monitor-lamp.png" alt="Gaming setup and desk finds" class="room-card-bg" />
+          <div class="room-card-overlay">
+            <div class="room-card-inner">
+              <h3>Gaming Setup</h3>
+              <p>Clean, minimal, dialed in</p>
+            </div>
           </div>
         </a>
 

@@ -312,6 +312,17 @@
 
     const activeFilters = { room: 'all', type: 'all', aesthetic: 'all' };
 
+    // Auto-apply room filter from URL ?room= param
+    const urlRoom = new URLSearchParams(window.location.search).get('room');
+    if (urlRoom) {
+      activeFilters.room = urlRoom;
+      const roomBtn = document.querySelector('[data-group="room"][data-filter="' + urlRoom + '"]');
+      if (roomBtn) {
+        document.querySelectorAll('[data-group="room"]').forEach(b => b.classList.remove('active'));
+        roomBtn.classList.add('active');
+      }
+    }
+
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const group = btn.dataset.group;
@@ -321,6 +332,8 @@
         applyFilters();
       });
     });
+
+    if (urlRoom) applyFilters();
 
     function applyFilters() {
       const cards = document.querySelectorAll('#shop-grid .card');
