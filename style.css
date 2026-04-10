@@ -705,3 +705,186 @@ a { color: inherit; text-decoration: none; }
   transition: color 0.2s;
 }
 .back-link:hover { color: var(--brown); }
+
+/* =====================
+   BLOG POST PAGE
+   ===================== */
+.post-page {
+  padding-bottom: 80px;
+}
+
+.post-hero {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.post-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.post-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(30,20,12,0.82) 0%, rgba(30,20,12,0.3) 60%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 48px;
+}
+
+.post-eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--beige-mid);
+  margin-bottom: 10px;
+}
+
+.post-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 400;
+  color: #fffdf9;
+  line-height: 1.2;
+  max-width: 700px;
+  margin-bottom: 14px;
+}
+
+.post-affiliate-top {
+  font-size: 0.72rem;
+  color: rgba(255,253,249,0.55);
+  max-width: 600px;
+}
+
+.post-body {
+  max-width: 720px;
+  margin: 56px auto 0;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text);
+}
+
+.post-body p {
+  margin-bottom: 20px;
+}
+
+.post-h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 600;
+  color: var(--text);
+  margin: 44px 0 14px;
+  line-height: 1.3;
+}
+
+.post-product-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 8px 0 32px;
+}
+
+.post-product-detail {
+  font-size: 0.8rem;
+  color: var(--brown-light);
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.post-product-detail:hover { color: var(--brown); }
+
+/* Product shelf at bottom of post */
+.post-product-shelf {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--beige-mid);
+}
+
+.post-shelf-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+
+.post-product-card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--beige-mid);
+}
+
+.post-product-card:last-child { border-bottom: none; }
+
+.post-product-img {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--beige-mid);
+}
+
+.post-product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-product-name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.post-product-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.post-affiliate-bottom {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  opacity: 0.65;
+  margin-top: 40px;
+}
+
+.post-back {
+  margin-top: 32px;
+}
+
+@media (max-width: 560px) {
+  .post-hero { height: 300px; }
+  .post-hero-overlay { padding-bottom: 28px; }
+  .post-body { margin-top: 36px; }
+  .post-product-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+/* Post cards on homepage (with real images) */
+.post-card-img-real {
+  height: 180px;
+  overflow: hidden;
+}
+
+.post-card-img-real img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.post-card:hover .post-card-img-real img {
+  transform: scale(1.05);
+}
