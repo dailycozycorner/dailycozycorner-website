@@ -1,283 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DCC Diary — dailycozycorner</title>
-  <meta name="description" content="Cozy home decor guides, desk setup ideas, bedroom finds, dorm room essentials and more — all on Amazon." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
-  <style>
-    .blog-hero {
-      background: var(--beige-dark);
-      padding: 72px 0 48px;
-      text-align: center;
-    }
-    .blog-hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 5vw, 3rem);
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-    .blog-hero p {
-      color: var(--text-light);
-      font-size: 1rem;
-      max-width: 480px;
-      margin: 0 auto;
-    }
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>DCC Diary dailycozycorner</title>
+ <meta name="description" content="Cozy home decor guides, desk setup ideas, bedroom finds, dorm room essentials and more all on Amazon." />
+ <link rel="stylesheet" href="style.css" />
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+ <style>
+ .blog-hero {
+ background: var(--beige-dark);
+ padding: 72px 0 48px;
+ text-align: center;
+ }
+ .blog-hero h1 {
+ font-family: var(--font-serif);
+ font-size: clamp(2rem, 5vw, 3rem);
+ color: var(--text);
+ margin-bottom: 12px;
+ }
+ .blog-hero p {
+ color: var(--text-light);
+ font-size: 1rem;
+ max-width: 480px;
+ margin: 0 auto;
+ }
 
-    /* Filter bar */
-    .filter-bar {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 36px 24px 8px;
-    }
-    .filter-btn {
-      padding: 8px 20px;
-      border-radius: 30px;
-      border: 1.5px solid var(--beige-mid);
-      background: var(--white);
-      color: var(--text-light);
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: all 0.18s ease;
-    }
-    .filter-btn:hover {
-      border-color: var(--brown-light);
-      color: var(--brown);
-    }
-    .filter-btn.active {
-      background: var(--brown);
-      color: #fff;
-      border-color: var(--brown);
-    }
+ /* Filter bar */
+ .filter-bar {
+ display: flex;
+ gap: 10px;
+ flex-wrap: wrap;
+ justify-content: center;
+ padding: 36px 24px 8px;
+ }
+ .filter-btn {
+ padding: 8px 20px;
+ border-radius: 30px;
+ border: 1.5px solid var(--beige-mid);
+ background: var(--white);
+ color: var(--text-light);
+ font-family: var(--font-sans);
+ font-size: 0.85rem;
+ cursor: pointer;
+ transition: all 0.18s ease;
+ }
+ .filter-btn:hover {
+ border-color: var(--brown-light);
+ color: var(--brown);
+ }
+ .filter-btn.active {
+ background: var(--brown);
+ color: #fff;
+ border-color: var(--brown);
+ }
 
-    /* Blog grid */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 28px;
-      padding: 36px 0 80px;
-    }
+ /* Blog grid */
+ .blog-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ gap: 28px;
+ padding: 36px 0 80px;
+ }
 
-    .blog-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: flex;
-      flex-direction: column;
-    }
-    .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(60,40,20,0.12);
-    }
-    .blog-card-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
-    .blog-card-body {
-      padding: 20px 22px 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .blog-card-tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-    .blog-card-tag {
-      font-size: 0.72rem;
-      font-family: var(--font-sans);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--brown-light);
-      background: var(--beige-dark);
-      padding: 3px 9px;
-      border-radius: 20px;
-    }
-    .blog-card-title {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      line-height: 1.4;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-    .blog-card-desc {
-      font-size: 0.88rem;
-      color: var(--text-light);
-      line-height: 1.6;
-      flex: 1;
-      margin-bottom: 18px;
-    }
-    .blog-card-link {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--brown);
-      font-family: var(--font-sans);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .blog-card-link::after { content: " →"; }
-    .blog-card-link:hover { text-decoration: underline; }
+ .blog-card {
+ background: var(--white);
+ border-radius: var(--radius);
+ overflow: hidden;
+ box-shadow: var(--shadow);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ display: flex;
+ flex-direction: column;
+ }
+ .blog-card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 8px 32px rgba(60,40,20,0.12);
+ }
+ .blog-card-img {
+ width: 100%;
+ height: 220px;
+ object-fit: cover;
+ display: block;
+ }
+ .blog-card-body {
+ padding: 20px 22px 24px;
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ }
+ .blog-card-tags {
+ display: flex;
+ gap: 6px;
+ flex-wrap: wrap;
+ margin-bottom: 10px;
+ }
+ .blog-card-tag {
+ font-size: 0.72rem;
+ font-family: var(--font-sans);
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.06em;
+ color: var(--brown-light);
+ background: var(--beige-dark);
+ padding: 3px 9px;
+ border-radius: 20px;
+ }
+ .blog-card-title {
+ font-family: var(--font-serif);
+ font-size: 1.15rem;
+ line-height: 1.4;
+ color: var(--text);
+ margin-bottom: 10px;
+ }
+ .blog-card-desc {
+ font-size: 0.88rem;
+ color: var(--text-light);
+ line-height: 1.6;
+ flex: 1;
+ margin-bottom: 18px;
+ }
+ .blog-card-link {
+ font-size: 0.85rem;
+ font-weight: 700;
+ color: var(--brown);
+ font-family: var(--font-sans);
+ display: inline-flex;
+ align-items: center;
+ gap: 4px;
+ }
+ .blog-card-link::after { content: " →"; }
+ .blog-card-link:hover { text-decoration: underline; }
 
-    .blog-card[data-hidden="true"] { display: none; }
+ .blog-card[data-hidden="true"] { display: none; }
 
-    .no-results {
-      text-align: center;
-      color: var(--text-light);
-      font-size: 1rem;
-      padding: 60px 0;
-      display: none;
-      grid-column: 1 / -1;
-    }
-    .no-results.visible { display: block; }
-  </style>
+ .no-results {
+ text-align: center;
+ color: var(--text-light);
+ font-size: 1rem;
+ padding: 60px 0;
+ display: none;
+ grid-column: 1 / -1;
+ }
+ .no-results.visible { display: block; }
+ </style>
 </head>
 <body>
 
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">dailycozycorner</a>
-      <button class="nav-toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></button>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#picks">Finds</a>
-        <a href="shop.html">Shop</a>
-        <a href="blog.html" class="active">Blog</a>
-        <a href="https://www.pinterest.com/dailycozycorner/" target="_blank">Pinterest</a>
-      </nav>
-    </div>
-  </header>
+ <header class="nav">
+ <div class="nav-inner">
+ <a href="index.html" class="logo">dailycozycorner</a>
+ <button class="nav-toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></button>
+ <nav class="nav-links">
+  <a href="index.html">Home</a>
+  <a href="index.html#picks">Finds</a>
+  <a href="shop.html">Shop</a>
+  <a href="blog.html" class="active">Blog</a>
+  <a href="https://www.pinterest.com/dailycozycorner/" target="_blank">Pinterest</a>
+ </nav>
+ </div>
+ </header>
 
-  <div class="blog-hero">
-    <div class="container">
-      <h1>DCC Diary</h1>
-      <p>Cozy home guides, desk setups, bedroom finds, and everything in between — all on Amazon.</p>
-    </div>
+ <div class="blog-hero">
+ <div class="container">
+ <h1>DCC Diary</h1>
+ <p>Cozy home guides, desk setups, bedroom finds, and everything in between all on Amazon.</p>
+ </div>
+ </div>
+
+ <!-- FILTER BAR -->
+ <div class="container">
+ <div class="filter-bar">
+ <button class="filter-btn active" data-filter="all">All Posts</button>
+ <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+ <button class="filter-btn" data-filter="desk">Desk Setup</button>
+ <button class="filter-btn" data-filter="dorm">Dorm Room</button>
+ <button class="filter-btn" data-filter="organization">Organization</button>
+ <button class="filter-btn" data-filter="aesthetic">Aesthetic</button>
+ </div>
+
+ <!-- BLOG GRID -->
+ <div class="blog-grid" id="blog-grid">
+
+ <a href="posts/bedroom-amazon-finds.html" class="blog-card" data-categories="bedroom aesthetic">
+  <img src="images/mushroom-lamp.png" alt="Cozy bedroom styled with Amazon finds including a retro mushroom lamp and warm lighting" class="blog-card-img" />
+  <div class="blog-card-body">
+  <div class="blog-card-tags">
+  <span class="blog-card-tag">Bedroom</span>
+  <span class="blog-card-tag">Aesthetic</span>
   </div>
-
-  <!-- FILTER BAR -->
-  <div class="container">
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Posts</button>
-      <button class="filter-btn" data-filter="bedroom">Bedroom</button>
-      <button class="filter-btn" data-filter="desk">Desk Setup</button>
-      <button class="filter-btn" data-filter="dorm">Dorm Room</button>
-      <button class="filter-btn" data-filter="organization">Organization</button>
-      <button class="filter-btn" data-filter="aesthetic">Aesthetic</button>
-    </div>
-
-    <!-- BLOG GRID -->
-    <div class="blog-grid" id="blog-grid">
-
-      <a href="posts/bedroom-amazon-finds.html" class="blog-card" data-categories="bedroom aesthetic">
-        <img src="images/mushroom-lamp.png" alt="Cozy bedroom styled with Amazon finds including a retro mushroom lamp and warm lighting" class="blog-card-img" />
-        <div class="blog-card-body">
-          <div class="blog-card-tags">
-            <span class="blog-card-tag">Bedroom</span>
-            <span class="blog-card-tag">Aesthetic</span>
-          </div>
-          <h2 class="blog-card-title">10 Amazon Finds That Make Any Bedroom Look Expensive</h2>
-          <p class="blog-card-desc">Transform your bedroom without a full renovation. These Amazon finds under $100 make any room feel warm, intentional, and put-together.</p>
-          <span class="blog-card-link">Read the post</span>
-        </div>
-      </a>
-
-      <a href="posts/desk-setup-guide.html" class="blog-card" data-categories="desk organization">
-        <img src="images/laptop-stand.png" alt="Clean minimal desk setup with aluminum laptop stand and monitor light" class="blog-card-img" />
-        <div class="blog-card-body">
-          <div class="blog-card-tags">
-            <span class="blog-card-tag">Desk Setup</span>
-            <span class="blog-card-tag">Organization</span>
-          </div>
-          <h2 class="blog-card-title">Build the Perfect WFH Desk Setup for Under $150</h2>
-          <p class="blog-card-desc">The exact desk accessories that make your workspace feel clean, focused, and aesthetic — all on Amazon, all under $150 total.</p>
-          <span class="blog-card-link">Read the post</span>
-        </div>
-      </a>
-
-      <a href="posts/clean-girl-desk-setup.html" class="blog-card" data-categories="desk aesthetic organization">
-        <img src="images/collages/leatherdeskpad_laptopstand_desktopbookshelforganizer_pastelhighlighters_monitorlamp_cablemanagementbox_collage.jpg" alt="Clean girl desk setup with leather pad, laptop stand, bookshelf, pastel highlighters, monitor lamp, and cable box" class="blog-card-img" />
-        <div class="blog-card-body">
-          <div class="blog-card-tags">
-            <span class="blog-card-tag">Desk Setup</span>
-            <span class="blog-card-tag">Aesthetic</span>
-          </div>
-          <h2 class="blog-card-title">The Clean Girl Desk Setup: 6 Amazon Finds That Make It Look Effortless</h2>
-          <p class="blog-card-desc">The leather pad, the laptop stand, the mini bookshelf — six pieces that build the clean girl desk aesthetic from scratch, all on Amazon.</p>
-          <span class="blog-card-link">Read the post</span>
-        </div>
-      </a>
-
-      <a href="posts/dorm-room-essentials.html" class="blog-card" data-categories="dorm bedroom organization aesthetic">
-        <img src="images/arched-wall-mirror.png" alt="Cozy minimal dorm room with Amazon finds including an arched mirror and floating shelves" class="blog-card-img" />
-        <div class="blog-card-body">
-          <div class="blog-card-tags">
-            <span class="blog-card-tag">Dorm Room</span>
-            <span class="blog-card-tag">Organization</span>
-          </div>
-          <h2 class="blog-card-title">Dorm Room Glow-Up: The Amazon Finds Worth Actually Buying</h2>
-          <p class="blog-card-desc">Skip the stuff you'll never use. These are the dorm room essentials that actually make your space feel like home — all on Amazon.</p>
-          <span class="blog-card-link">Read the post</span>
-        </div>
-      </a>
-
-      <div class="no-results" id="no-results">No posts in this category yet — check back soon.</div>
-
-    </div>
+  <h2 class="blog-card-title">10 Amazon Finds That Make Any Bedroom Look Expensive</h2>
+  <p class="blog-card-desc">Transform your bedroom without a full renovation. These Amazon finds under $100 make any room feel warm, intentional, and put-together.</p>
+  <span class="blog-card-link">Read the post</span>
   </div>
+ </a>
 
-  <footer class="footer">
-    <div class="container">
-      <p class="logo">dailycozycorner</p>
-      <p class="footer-note">As an Amazon Associate I earn from qualifying purchases.</p>
-      <p class="footer-note"><a href="privacy.html">Privacy Policy</a></p>
-    </div>
-  </footer>
+ <a href="posts/desk-setup-guide.html" class="blog-card" data-categories="desk organization">
+  <img src="images/laptop-stand.png" alt="Clean minimal desk setup with aluminum laptop stand and monitor light" class="blog-card-img" />
+  <div class="blog-card-body">
+  <div class="blog-card-tags">
+  <span class="blog-card-tag">Desk Setup</span>
+  <span class="blog-card-tag">Organization</span>
+  </div>
+  <h2 class="blog-card-title">Build the Perfect WFH Desk Setup for Under $150</h2>
+  <p class="blog-card-desc">The exact desk accessories that make your workspace feel clean, focused, and aesthetic all on Amazon, all under $150 total.</p>
+  <span class="blog-card-link">Read the post</span>
+  </div>
+ </a>
 
-  <script>
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.blog-card');
-    const noResults = document.getElementById('no-results');
+ <a href="posts/clean-girl-desk-setup.html" class="blog-card" data-categories="desk aesthetic organization">
+  <img src="images/collages/leatherdeskpad_laptopstand_desktopbookshelforganizer_pastelhighlighters_monitorlamp_cablemanagementbox_collage.jpg" alt="Clean girl desk setup with leather pad, laptop stand, bookshelf, pastel highlighters, monitor lamp, and cable box" class="blog-card-img" />
+  <div class="blog-card-body">
+  <div class="blog-card-tags">
+  <span class="blog-card-tag">Desk Setup</span>
+  <span class="blog-card-tag">Aesthetic</span>
+  </div>
+  <h2 class="blog-card-title">The Clean Girl Desk Setup: 6 Amazon Finds That Make It Look Effortless</h2>
+  <p class="blog-card-desc">The leather pad, the laptop stand, the mini bookshelf six pieces that build the clean girl desk aesthetic from scratch, all on Amazon.</p>
+  <span class="blog-card-link">Read the post</span>
+  </div>
+ </a>
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+ <a href="posts/dorm-room-essentials.html" class="blog-card" data-categories="dorm bedroom organization aesthetic">
+  <img src="images/arched-wall-mirror.png" alt="Cozy minimal dorm room with Amazon finds including an arched mirror and floating shelves" class="blog-card-img" />
+  <div class="blog-card-body">
+  <div class="blog-card-tags">
+  <span class="blog-card-tag">Dorm Room</span>
+  <span class="blog-card-tag">Organization</span>
+  </div>
+  <h2 class="blog-card-title">Dorm Room Glow-Up: The Amazon Finds Worth Actually Buying</h2>
+  <p class="blog-card-desc">Skip the stuff you'll never use. These are the dorm room essentials that actually make your space feel like home all on Amazon.</p>
+  <span class="blog-card-link">Read the post</span>
+  </div>
+ </a>
 
-        const filter = btn.dataset.filter;
-        let visible = 0;
+ <div class="no-results" id="no-results">No posts in this category yet check back soon.</div>
 
-        cards.forEach(card => {
-          const cats = card.dataset.categories || '';
-          const show = filter === 'all' || cats.includes(filter);
-          card.dataset.hidden = show ? 'false' : 'true';
-          if (show) visible++;
-        });
+ </div>
+ </div>
 
-        noResults.classList.toggle('visible', visible === 0);
-      });
-    });
+ <footer class="footer">
+ <div class="container">
+ <p class="logo">dailycozycorner</p>
+ <p class="footer-note">As an Amazon Associate I earn from qualifying purchases.</p>
+ <p class="footer-note"><a href="privacy.html">Privacy Policy</a></p>
+ </div>
+ </footer>
 
-    // Auto-filter from URL param: blog.html?filter=bedroom
-    const urlFilter = new URLSearchParams(window.location.search).get('filter');
-    if (urlFilter) {
-      const btn = document.querySelector(`.filter-btn[data-filter="${urlFilter}"]`);
-      if (btn) btn.click();
-    }
-  </script>
+ <script>
+ const filterBtns = document.querySelectorAll('.filter-btn');
+ const cards = document.querySelectorAll('.blog-card');
+ const noResults = document.getElementById('no-results');
+
+ filterBtns.forEach(btn => {
+ btn.addEventListener('click', () => {
+  filterBtns.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const filter = btn.dataset.filter;
+  let visible = 0;
+
+  cards.forEach(card => {
+  const cats = card.dataset.categories || '';
+  const show = filter === 'all' || cats.includes(filter);
+  card.dataset.hidden = show ? 'false' : 'true';
+  if (show) visible++;
+  });
+
+  noResults.classList.toggle('visible', visible === 0);
+ });
+ });
+
+ // Auto-filter from URL param: blog.html?filter=bedroom
+ const urlFilter = new URLSearchParams(window.location.search).get('filter');
+ if (urlFilter) {
+ const btn = document.querySelector(`.filter-btn[data-filter="${urlFilter}"]`);
+ if (btn) btn.click();
+ }
+ </script>
 
 </body>
 </html>
