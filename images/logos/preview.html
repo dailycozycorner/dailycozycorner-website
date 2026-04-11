@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>dailycozycorner Logo Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f0ebe0; font-family: 'Lato', sans-serif; padding: 48px 32px; }
+  h1 { font-family: 'Playfair Display', serif; color: #6b5744; font-size: 28px; margin-bottom: 8px; }
+  p { color: #9c7e65; font-size: 14px; margin-bottom: 48px; letter-spacing: 0.04em; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .card { background: #fffdf9; border-radius: 12px; padding: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; box-shadow: 0 2px 16px rgba(60,40,20,0.07); }
+  .card h2 { font-family: 'Lato', sans-serif; font-size: 11px; letter-spacing: 0.2em; color: #9c7e65; text-transform: uppercase; }
+  .card img { max-width: 100%; height: auto; }
+  .card-dark { background: #3a2e26; }
+  .card-dark h2 { color: #c8b49a; }
+  .note { margin-top: 40px; font-size: 12px; color: #9c7e65; text-align: center; letter-spacing: 0.06em; }
+</style>
+</head>
+<body>
+  <h1>dailycozycorner</h1>
+  <p>Logo Concepts — SVG / Vector</p>
+  <div class="grid">
+    <div class="card">
+      <h2>Wordmark — Horizontal</h2>
+      <img src="wordmark.svg" alt="Wordmark logo" />
+    </div>
+    <div class="card">
+      <h2>Monogram — Circle Badge</h2>
+      <img src="monogram.svg" style="max-width:200px" alt="Monogram logo" />
+    </div>
+    <div class="card">
+      <h2>Icon + Wordmark — Horizontal</h2>
+      <img src="icon-wordmark.svg" alt="Icon and wordmark logo" />
+    </div>
+    <div class="card">
+      <h2>Stacked — Icon over Wordmark</h2>
+      <img src="stacked.svg" style="max-width:340px" alt="Stacked logo" />
+    </div>
+  </div>
+  <div class="grid" style="margin-top:32px">
+    <div class="card card-dark">
+      <h2>Wordmark — Dark Background</h2>
+      <img src="wordmark.svg" alt="Wordmark logo dark" style="filter: invert(1) sepia(0.3) hue-rotate(5deg) brightness(1.1)" />
+    </div>
+    <div class="card card-dark">
+      <h2>Stacked — Dark Background</h2>
+      <img src="stacked.svg" style="max-width:300px; filter: invert(1) sepia(0.3) hue-rotate(5deg) brightness(1.1)" alt="Stacked logo dark" />
+    </div>
+  </div>
+  <p class="note">All logos are SVG — scale to any size without quality loss</p>
+</body>
+</html>
