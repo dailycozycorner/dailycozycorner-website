@@ -38,19 +38,51 @@
  </header>
 
  <!-- HERO -->
- <section class="hero">
+ <section class="hero hero-fullbleed">
+ <div class="hero-bg-slider">
+  <div class="hero-bg-panel active" style="background-image:url('images/hero-banner-1.jpg')"></div>
+  <div class="hero-bg-panel" style="background-image:url('images/hero-banner-2.jpg')"></div>
+  <div class="hero-bg-panel" style="background-image:url('images/hero-banner-3.jpg')"></div>
+ </div>
+ <div class="hero-overlay"></div>
  <div class="hero-inner">
- <p class="hero-eyebrow">welcome to</p>
- <h1 class="hero-title">dailycozycorner</h1>
- <p class="hero-sub">Carefully curated Amazon finds to make every room feel warm, functional, and intentional.</p>
- <a href="#picks" class="btn">Browse the Finds</a>
+  <p class="hero-eyebrow">welcome to</p>
+  <h1 class="hero-title">dailycozycorner</h1>
+  <p class="hero-sub">Carefully curated Amazon finds to make every room feel warm, functional, and intentional.</p>
+  <div class="hero-ctas">
+  <a href="#picks" class="btn btn-hero">Browse the Finds</a>
+  <a href="shop.html" class="btn btn-hero-ghost">Shop All</a>
+  </div>
  </div>
- <div class="hero-banner">
- <div class="hero-banner-panel"><img src="images/scenes/hero-banner-1.jpg" alt="Warm cozy bedroom with linen bedding and morning light" /></div>
- <div class="hero-banner-panel"><img src="images/scenes/hero-banner-2.jpg" alt="Cozy living room with plush sofa and candlelight" /></div>
- <div class="hero-banner-panel"><img src="images/scenes/hero-banner-3.jpg" alt="Warm reading nook with leather chair and glowing lamp" /></div>
+ <div class="hero-dots">
+  <button class="hero-dot active" onclick="goSlide(0)" aria-label="Slide 1"></button>
+  <button class="hero-dot" onclick="goSlide(1)" aria-label="Slide 2"></button>
+  <button class="hero-dot" onclick="goSlide(2)" aria-label="Slide 3"></button>
  </div>
+ <script>
+  let _slide = 0, _timer;
+  function goSlide(n) {
+   document.querySelectorAll('.hero-bg-panel').forEach((p,i) => p.classList.toggle('active', i===n));
+   document.querySelectorAll('.hero-dot').forEach((d,i) => d.classList.toggle('active', i===n));
+   _slide = n; clearInterval(_timer); _timer = setInterval(nextSlide, 5000);
+  }
+  function nextSlide() { goSlide((_slide + 1) % 3); }
+  _timer = setInterval(nextSlide, 5000);
+ </script>
  </section>
+
+ <!-- TRUST BAR -->
+ <div class="trust-bar">
+  <div class="trust-bar-inner">
+  <span>25+ curated finds</span>
+  <span class="trust-sep">·</span>
+  <span>Amazon Associate</span>
+  <span class="trust-sep">·</span>
+  <span>New pins daily on Pinterest</span>
+  <span class="trust-sep">·</span>
+  <span>Cozy home, functional living</span>
+  </div>
+ </div>
 
  <!-- FEATURED PICKS -->
  <section class="section" id="picks">
@@ -146,7 +178,7 @@
  <div class="grid-2">
 
   <a href="shop.html?room=bedroom" class="room-card room-card-img">
-  <img src="images/cutouts/flower-table-lamp.png" alt="Cozy minimal bedroom finds" class="room-card-bg" />
+  <img src="images/bedroom-roundup-scene.jpg" alt="Cozy minimal bedroom styled with warm lighting and linen bedding" class="room-card-bg" />
   <div class="room-card-overlay">
   <div class="room-card-inner">
    <h3>Minimal Bedroom</h3>
@@ -156,7 +188,7 @@
   </a>
 
   <a href="shop.html?room=home-office" class="room-card room-card-img">
-  <img src="images/cutouts/laptop-stand.png" alt="Home office and desk setup finds" class="room-card-bg" />
+  <img src="images/desk-roundup-scene.jpg" alt="Minimal home office desk setup with warm lighting" class="room-card-bg" />
   <div class="room-card-overlay">
   <div class="room-card-inner">
    <h3>Desk & Home Office</h3>
@@ -166,7 +198,7 @@
   </a>
 
   <a href="shop.html?room=kids-room" class="room-card room-card-img">
-  <img src="images/cutouts/stuffed-animal-hammock.png" alt="Kids room and nursery finds" class="room-card-bg" />
+  <img src="images/kids-room-roundup-scene.jpg" alt="Cozy styled kids room with soft lighting and organized decor" class="room-card-bg" />
   <div class="room-card-overlay">
   <div class="room-card-inner">
    <h3>Kids & Nursery</h3>
@@ -176,7 +208,7 @@
   </a>
 
   <a href="shop.html?room=gaming-setup" class="room-card room-card-img">
-  <img src="images/cutouts/monitor-lamp.png" alt="Gaming setup and desk finds" class="room-card-bg" />
+  <img src="images/scenes/led-light-strips.jpg" alt="Cozy gaming desk setup with colorful LED accent lighting" class="room-card-bg" />
   <div class="room-card-overlay">
   <div class="room-card-inner">
    <h3>Gaming Setup</h3>
